@@ -1,0 +1,587 @@
+fileFormatVersion: 2
+guid: 5707f9b80961a493cab0b81ba434e20f
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+    swizzle: 50462976
+    isReadable: 0
+    streamingMipmaps: 0
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMipmapLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  previousAsepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  asepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  importFileNodeState: 1
+  platformSettingsDirtyTick: 0
+  textureAssetName: 
+  singleSpriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  animatedSpriteImportData:
+  - name: Nairan - Bomber -  Destruction_Frame_1
+    originalName: 
+    pivot: {x: 0.5, y: -0.53333336}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 150
+      y: 56
+      width: 32
+      height: 30
+    spriteID: 9d6a82ff2dd3748888abaa23c599cb12
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 150, y: 56}
+  - name: Nairan - Bomber -  Destruction_Frame_2
+    originalName: 
+    pivot: {x: 0.5, y: -0.53333336}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 190
+      y: 56
+      width: 32
+      height: 30
+    spriteID: 5c88085f0abef414c8ddc37eaae68a97
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 190, y: 56}
+  - name: Nairan - Bomber -  Destruction_Frame_3
+    originalName: 
+    pivot: {x: 0.5, y: -0.38235295}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 212
+      y: 4
+      width: 34
+      height: 34
+    spriteID: 2a7f13b12f72e4a609a92948722e3cbc
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 212, y: 4}
+  - name: Nairan - Bomber -  Destruction_Frame_4
+    originalName: 
+    pivot: {x: 0.5, y: -0.18181819}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 44
+      height: 44
+    spriteID: 9e1fed55d32374ec3a9e75e70978ec9f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+  - name: Nairan - Bomber -  Destruction_Frame_5
+    originalName: 
+    pivot: {x: 0.5, y: -0.18181819}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 56
+      y: 4
+      width: 44
+      height: 44
+    spriteID: 42260bb9b0dd44648823d244a6632091
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 56, y: 4}
+  - name: Nairan - Bomber -  Destruction_Frame_6
+    originalName: 
+    pivot: {x: 0.5, y: -0.18181819}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 108
+      y: 4
+      width: 44
+      height: 44
+    spriteID: f42cd108e22b6434a86623254f16d818
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 108, y: 4}
+  - name: Nairan - Bomber -  Destruction_Frame_7
+    originalName: 
+    pivot: {x: 0.5, y: -0.18181819}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 4
+      width: 44
+      height: 44
+    spriteID: 6d4640b9eb06f46d59c91ada122eb46f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 160, y: 4}
+  - name: Nairan - Bomber -  Destruction_Frame_8
+    originalName: 
+    pivot: {x: 0.5, y: -0.18181819}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 56
+      width: 44
+      height: 44
+    spriteID: b8c61da4b08ca4b0f8748a18177b9b4e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 56}
+  - name: Nairan - Bomber -  Destruction_Frame_9
+    originalName: 
+    pivot: {x: 0.5, y: -0.18181819}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 56
+      y: 56
+      width: 44
+      height: 44
+    spriteID: f9351c372c682494c9fae3ead037b5e8
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 56, y: 56}
+  - name: Nairan - Bomber -  Destruction_Frame_10
+    originalName: 
+    pivot: {x: 0.5, y: -0.38235295}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 108
+      y: 56
+      width: 34
+      height: 34
+    spriteID: d1bb2529469c64b83ad066aa0dd384f5
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 108, y: 56}
+  - name: Nairan - Bomber -  Destruction_Frame_11
+    originalName: 
+    pivot: {x: 0.5, y: -0.75}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 108
+      y: 98
+      width: 24
+      height: 24
+    spriteID: 7c1c706179bc14b6da329f2a073ae37a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 108, y: 98}
+  - name: Nairan - Bomber -  Destruction_Frame_12
+    originalName: 
+    pivot: {x: 0.5, y: -1.6428572}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 230
+      y: 56
+      width: 14
+      height: 14
+    spriteID: 872d91617eaa84533b2ffad17d312bcd
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 230, y: 56}
+  - name: Nairan - Bomber -  Destruction_Frame_13
+    originalName: 
+    pivot: {x: 0.5, y: -3.25}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 230
+      y: 78
+      width: 8
+      height: 8
+    spriteID: 71f009b69e36247958a09be664fb5388
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 230, y: 78}
+  - name: Nairan - Bomber -  Destruction_Frame_14
+    originalName: 
+    pivot: {x: 0.5, y: -4.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 246
+      y: 78
+      width: 6
+      height: 6
+    spriteID: 2a3206bd992674d4f8cd71847461c872
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 246, y: 78}
+  - name: Nairan - Bomber -  Destruction_Frame_15
+    originalName: 
+    pivot: {x: 0.5, y: -2}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 108
+      width: 12
+      height: 12
+    spriteID: 677102fe810f148e0bbee1d7ff6cd50e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 108}
+  - name: Nairan - Bomber -  Destruction_Frame_0
+    originalName: 
+    pivot: {x: 0.5, y: -0.53333336}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 150
+      y: 94
+      width: 32
+      height: 30
+    spriteID: 5f412684631a44b5d9a8efa913381a28
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 150, y: 94}
+  spriteSheetImportData: []
+  asepriteLayers:
+  - layerIndex: 0
+    guid: 1688306772
+    name: Nairan - Bomber -  Destruction
+    layerFlags: 0
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Nairan - Bomber -  Destruction_Frame_1
+      frameIndex: 1
+      cellRect:
+        x: 16
+        y: 16
+        width: 32
+        height: 30
+      spriteId: 9d6a82ff2dd3748888abaa23c599cb12
+    - name: Nairan - Bomber -  Destruction_Frame_2
+      frameIndex: 2
+      cellRect:
+        x: 16
+        y: 16
+        width: 32
+        height: 30
+      spriteId: 5c88085f0abef414c8ddc37eaae68a97
+    - name: Nairan - Bomber -  Destruction_Frame_3
+      frameIndex: 3
+      cellRect:
+        x: 15
+        y: 13
+        width: 34
+        height: 34
+      spriteId: 2a7f13b12f72e4a609a92948722e3cbc
+    - name: Nairan - Bomber -  Destruction_Frame_4
+      frameIndex: 4
+      cellRect:
+        x: 10
+        y: 8
+        width: 44
+        height: 44
+      spriteId: 9e1fed55d32374ec3a9e75e70978ec9f
+    - name: Nairan - Bomber -  Destruction_Frame_5
+      frameIndex: 5
+      cellRect:
+        x: 10
+        y: 8
+        width: 44
+        height: 44
+      spriteId: 42260bb9b0dd44648823d244a6632091
+    - name: Nairan - Bomber -  Destruction_Frame_6
+      frameIndex: 6
+      cellRect:
+        x: 10
+        y: 8
+        width: 44
+        height: 44
+      spriteId: f42cd108e22b6434a86623254f16d818
+    - name: Nairan - Bomber -  Destruction_Frame_7
+      frameIndex: 7
+      cellRect:
+        x: 10
+        y: 8
+        width: 44
+        height: 44
+      spriteId: 6d4640b9eb06f46d59c91ada122eb46f
+    - name: Nairan - Bomber -  Destruction_Frame_8
+      frameIndex: 8
+      cellRect:
+        x: 10
+        y: 8
+        width: 44
+        height: 44
+      spriteId: b8c61da4b08ca4b0f8748a18177b9b4e
+    - name: Nairan - Bomber -  Destruction_Frame_9
+      frameIndex: 9
+      cellRect:
+        x: 10
+        y: 8
+        width: 44
+        height: 44
+      spriteId: f9351c372c682494c9fae3ead037b5e8
+    - name: Nairan - Bomber -  Destruction_Frame_10
+      frameIndex: 10
+      cellRect:
+        x: 15
+        y: 13
+        width: 34
+        height: 34
+      spriteId: d1bb2529469c64b83ad066aa0dd384f5
+    - name: Nairan - Bomber -  Destruction_Frame_11
+      frameIndex: 11
+      cellRect:
+        x: 20
+        y: 18
+        width: 24
+        height: 24
+      spriteId: 7c1c706179bc14b6da329f2a073ae37a
+    - name: Nairan - Bomber -  Destruction_Frame_12
+      frameIndex: 12
+      cellRect:
+        x: 25
+        y: 23
+        width: 14
+        height: 14
+      spriteId: 872d91617eaa84533b2ffad17d312bcd
+    - name: Nairan - Bomber -  Destruction_Frame_13
+      frameIndex: 13
+      cellRect:
+        x: 28
+        y: 26
+        width: 8
+        height: 8
+      spriteId: 71f009b69e36247958a09be664fb5388
+    - name: Nairan - Bomber -  Destruction_Frame_14
+      frameIndex: 14
+      cellRect:
+        x: 29
+        y: 27
+        width: 6
+        height: 6
+      spriteId: 2a3206bd992674d4f8cd71847461c872
+    - name: Nairan - Bomber -  Destruction_Frame_15
+      frameIndex: 15
+      cellRect:
+        x: 26
+        y: 24
+        width: 12
+        height: 12
+      spriteId: 677102fe810f148e0bbee1d7ff6cd50e
+    - name: Nairan - Bomber -  Destruction_Frame_0
+      frameIndex: 0
+      cellRect:
+        x: 16
+        y: 16
+        width: 32
+        height: 30
+      spriteId: 5f412684631a44b5d9a8efa913381a28
+    linkedCells: []
+    parentIndex: -1
+  platformSettings: []
+  generatePhysicsShape: 0
+  secondarySpriteTextures: []
+  spritePackingTag: 
+  canvasSize: {x: 64, y: 64}

@@ -2,12 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour 
+public class PlayerController : MonoBehaviour
 {
 
+    [SerializeField]
+    private StageData stageData;
     private Movement2D movement2D;
 
-    private void Awake() {
+    private void Awake()
+    {
         movement2D = GetComponent<Movement2D>();
     }
 
@@ -23,8 +26,10 @@ public class PlayerController : MonoBehaviour
         movement2D.MoveTo(new Vector3(x, y, 0));
     }
 
-    private void LateUpdate() {
+    private void LateUpdate()
+    {
         // 플레이어 캐릭터가 화면 범위 바깥으로 나가지 못하게 함 
-        transform.position = new Vector3()    
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x, stageData.LimitMin.x, stageData.LimitMax.x),
+                                Mathf.Clamp(transform.position.y, stageData.LimitMin.y, stageData.LimitMax.y));
     }
 }

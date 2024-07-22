@@ -7,11 +7,18 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField]
     private StageData stageData;
+
+    [SerializeField]
+    private KeyCode keyCodeAttack = KeyCode.Space;      // 공격키 설정 
     private Movement2D movement2D;
+
+    private Weapon weapon;
+
 
     private void Awake()
     {
         movement2D = GetComponent<Movement2D>();
+        weapon = GetComponent<Weapon>();
     }
 
     // Update is called once per frame
@@ -24,6 +31,16 @@ public class PlayerController : MonoBehaviour
 
         // MoveTo() 메소드에 값 입력
         movement2D.MoveTo(new Vector3(x, y, 0));
+
+        // 공격키를 Down/up으로 공격 시작 / 종료 
+        if (Input.GetKeyDown(keyCodeAttack))
+        {
+            weapon.StartFiring();
+        }
+        else if (Input.GetKeyUp(keyCodeAttack))
+        {
+            weapon.StopFiring();
+        }
     }
 
     private void LateUpdate()

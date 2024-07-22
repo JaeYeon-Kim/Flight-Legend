@@ -8,7 +8,7 @@ public class Projectile : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("Enemy"))
         {
             // 부딪힌 오브젝트 사망처리 (적)
             Destroy(collision.gameObject);

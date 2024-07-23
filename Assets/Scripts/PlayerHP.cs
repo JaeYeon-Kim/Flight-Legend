@@ -11,6 +11,7 @@ public class PlayerHP : MonoBehaviour
     private float maxHp = 10;       // 최대 체력 
     private float currentHP; // 현재 체력 
     private SpriteRenderer spriteRenderer;
+    private PlayerController playerController;
 
     public float MaxHP => maxHp;            // maxHP 변수에 접근할 수 있는 프로퍼티(Get만 가능)
     public float CurrentHP => currentHP;    // currentHP 변수에 접근할 수 잇는 프로퍼티 (Get만 가능);
@@ -18,6 +19,7 @@ public class PlayerHP : MonoBehaviour
     {
         currentHP = maxHp;      // 현재 체력을 최대 체력으로 초기에 설정 
         spriteRenderer = GetComponent<SpriteRenderer>();
+        playerController = GetComponent<PlayerController>();
     }
 
     public void TakeDamage(float damage)
@@ -31,7 +33,8 @@ public class PlayerHP : MonoBehaviour
         // 체력이 0이하 = 플레이어 캐릭터 사망 
         if (currentHP <= 0)
         {
-            Debug.Log("PlayerHP : 0..Die");
+            // 체력이 0이면 OnDie() 함수를 호출해서 죽었을 때 처리를 한다.
+            playerController.OnDie();
         }
     }
 

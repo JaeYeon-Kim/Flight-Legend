@@ -14,6 +14,15 @@ public class PlayerController : MonoBehaviour
 
     private Weapon weapon;
 
+    // 점수 
+    private int score;
+    public int Score
+    {
+        // score 값이 음수가 되면 안됨
+        set => score = Mathf.Max(0, value);
+        get => score;
+    }
+
 
     private void Awake()
     {

@@ -12,8 +12,9 @@ public class Projectile : MonoBehaviour
     {
         if (collision.CompareTag("Enemy"))
         {
-            // 부딪힌 적 데미지 주는 처리 
-            // collision.GetComponent<>
+
+            // 부딪힌 오브젝트 데미지 주는 처리 
+            collision.GetComponent<EnemyHP>().TakeDamage(damage);
 
             // 내 오브젝트 삭제(발사체)
             Destroy(gameObject);

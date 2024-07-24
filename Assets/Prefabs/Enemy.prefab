@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5653983699344535914}
   - component: {fileID: -7491004841046201801}
   - component: {fileID: -8496949822121691529}
+  - component: {fileID: -8703271524539283564}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -149,6 +150,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0a031d090f1e4de78501d5af5722d8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explosionPrefab: {fileID: 760678370071004918, guid: 2f86dcddc2cce495d9cc2cccc91606d4, type: 3}
+  damage: 1
+  scorePoint: 100
 --- !u!114 &-8496949822121691529
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -162,3 +166,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stageData: {fileID: 11400000, guid: d1056eb88fdf84f0c8317c3e78386507, type: 2}
+--- !u!114 &-8703271524539283564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4203639374884921722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b3688424796042d1957e907731ead06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHP: 4

@@ -39,8 +39,6 @@ public class Enemy : MonoBehaviour
     // 적개체 (본인)이 죽을 경우 호출되는 메서드 
     public void OnDie()
     {
-
-
         // 적 개체가 사망할경우 그자리에 폭발 이펙트 생성 
         Instantiate(explosionPrefab, transform.position, Quaternion.identity);
 

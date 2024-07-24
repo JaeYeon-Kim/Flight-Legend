@@ -11,6 +11,10 @@ public class EnemyHP : MonoBehaviour
     private Enemy enemy;
     private SpriteRenderer spriteRenderer;
 
+    // 적 체력 프로퍼티
+    public float MaxHP => maxHP;
+    public float CurrentHP => currentHP;
+
 
     private void Awake()
     {

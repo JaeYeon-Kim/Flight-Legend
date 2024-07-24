@@ -255,6 +255,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stageData: {fileID: 11400000, guid: d1056eb88fdf84f0c8317c3e78386507, type: 2}
   enemyPrefab: {fileID: 4203639374884921722, guid: a217590c9088d49f7920769aa1fe70ba, type: 3}
+  enemyHPSliderPrefab: {fileID: 691592155398333302, guid: 4c233b6dfdbd24c048de4de0ecbd627b, type: 3}
+  canvasTransform: {fileID: 639682032}
   spawnTime: 0.35
 --- !u!4 &199485437
 Transform:

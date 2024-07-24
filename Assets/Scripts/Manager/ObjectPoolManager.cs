@@ -14,7 +14,7 @@ public class ObjectPoolManager : MonoBehaviour
     public static ObjectPoolManager instance;
 
     public int defaultCapacity = 10;        // 기본으로 생성해 놓을 양 
-    public int maxPoolSize = 15;            // 풀의 최대 사이즈 
+    public int maxPoolSize = 100;            // 풀의 최대 사이즈 
 
     public IObjectPool<GameObject> Pool { get; private set; }
 

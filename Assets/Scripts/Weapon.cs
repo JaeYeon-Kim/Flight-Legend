@@ -112,6 +112,7 @@ public class Weapon : MonoBehaviour
             case 3:
                 var cloneBulletThird = ObjectPoolManager.instance.Pool.Get();
                 cloneBulletThird.transform.position = transform.position + Vector3.up * 0.5f;
+                cloneBulletThird.GetComponent<Movement2D>().MoveTo(new Vector3(0f, 1, 0));
 
                 var cloneBulletThird2 = ObjectPoolManager.instance.Pool.Get();
                 cloneBulletThird2.transform.position = transform.position + Vector3.up * 0.5f;

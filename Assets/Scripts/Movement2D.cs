@@ -23,6 +23,10 @@ public class Movement2D : MonoBehaviour
         transform.position += moveDirection * moveSpeed * Time.deltaTime;
     }
     
+    public void debugTemp()
+    {
+        Debug.Log(moveDirection);
+    }
     // 외부에서 호출해 이동 방향을 설정 
     public void MoveTo(Vector3 direction) {
         moveDirection = direction;

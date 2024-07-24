@@ -63,6 +63,8 @@ public class PlayerController : MonoBehaviour
     }
 
     public void OnDie() {
+        // 디바이스에 획득한 점수 score 저장
+        PlayerPrefs.SetInt("Score", score);
         // 플레이어 사망 시 nextSceneName 씬으로 이동 
         SceneManager.LoadScene(nextSceneName);
     }

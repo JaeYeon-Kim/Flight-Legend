@@ -195,9 +195,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0a031d090f1e4de78501d5af5722d8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 1582158913979132, guid: eb37e015fa916944c81e05758e6ce0b6, type: 3}
   explosionPrefab: {fileID: 760678370071004918, guid: 2f86dcddc2cce495d9cc2cccc91606d4, type: 3}
   damage: 1
   scorePoint: 100
+  attackRate: 1
+  detectionRange: 5
 --- !u!114 &1395907549831275960
 MonoBehaviour:
   m_ObjectHideFlags: 0

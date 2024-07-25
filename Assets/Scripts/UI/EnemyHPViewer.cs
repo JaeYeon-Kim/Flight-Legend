@@ -7,8 +7,7 @@ using UnityEngine.UI;
 // 적체력바가 적 기체에 붙어있게 하기 위한 스크립트 
 public class EnemyHPViewer : MonoBehaviour
 {
-    [SerializeField]
-    private Vector3 distance = Vector3.up * 20.0f;
+    [SerializeField] private Vector3 distance = Vector3.up * 20.0f;
     private Transform targetTransform;
     private RectTransform rectTransform;
 

@@ -5,8 +5,7 @@ using UnityEngine;
 public class EnemyHP : MonoBehaviour
 {
 
-    [SerializeField]
-    private float maxHP = 4;    // 최대 체력
+    [SerializeField] private float maxHP = 4;    // 최대 체력
     private float currentHP;    // 현재 체력
     private Enemy enemy;
     private SpriteRenderer spriteRenderer;

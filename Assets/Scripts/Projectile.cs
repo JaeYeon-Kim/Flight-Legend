@@ -17,6 +17,7 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        // 일반 몬스터 충돌처리 
         if (collision.CompareTag("Enemy"))
         {
 
@@ -26,6 +27,19 @@ public class Projectile : MonoBehaviour
             // 오브젝트 풀에 반환
             Pool.Release(this.gameObject);
         }
+        // 보스 몬스터 충돌처리
+        else if (collision.CompareTag("Boss"))
+        {
+            collision.GetComponent<BossData>().TakeDamage(damage);
+
+            // 오브젝트 풀에 반환
+            Pool.Release(this.gameObject);
+        }
+        else
+        {
+            return;
+        }
+
     }
 
 

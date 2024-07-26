@@ -13,6 +13,7 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private StageData stageData;        // 적 생성을 위한 스테이지 정보 
     [SerializeField] private GameObject enemyHPSliderPrefab; // 적 체력을 나타내는 Slider UI 프리팹
     [SerializeField] private Transform canvasTransform;  // UI를 표현하는 Canvas 오브젝트의 Transform
+    [SerializeField] private GameObject sliderBossHP;    // 보스 체력 슬라이더바 
     [SerializeField] private float spawnTime;            // 생성 주기 
     [SerializeField] private int maxEnemyCount = 100; // 현재 스테이지의 최대 적 생성 숫자 
 
@@ -23,6 +24,10 @@ public class EnemySpawner : MonoBehaviour
     {
         // 보스 오브젝트 비활성화 
         boss.SetActive(false);
+
+
+        // 보스 체력바 비활성화 
+        sliderBossHP.SetActive(false);
 
         // 적 기체(일반 몬스터 생성 시작)
         StartCoroutine("SpawnEnemy");
@@ -88,6 +93,9 @@ public class EnemySpawner : MonoBehaviour
 
         // 2초 대기 
         yield return new WaitForSeconds(2.0f);
+
+        // 보스 체력바 활성화 
+        sliderBossHP.SetActive(true);
 
         // 보스 오브젝트 활성화 
         boss.SetActive(true);

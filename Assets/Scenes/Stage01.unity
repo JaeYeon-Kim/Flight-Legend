@@ -1983,6 +1983,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7687ca3adef754facaa7c63e4681693c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stageData: {fileID: 11400000, guid: d1056eb88fdf84f0c8317c3e78386507, type: 2}
   bossAppearPoint: 2.5
 --- !u!114 &2099635704
 MonoBehaviour:

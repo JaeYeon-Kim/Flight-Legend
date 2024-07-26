@@ -262,6 +262,8 @@ MonoBehaviour:
   enemyHPSliderPrefab: {fileID: 691592155398333302, guid: 4c233b6dfdbd24c048de4de0ecbd627b, type: 3}
   canvasTransform: {fileID: 639682032}
   spawnTime: 1
+  maxEnemyCount: 5
+  soundManager: {fileID: 558673741}
 --- !u!4 &199485437
 Transform:
   m_ObjectHideFlags: 0
@@ -755,6 +757,7 @@ GameObject:
   m_Component:
   - component: {fileID: 558673740}
   - component: {fileID: 558673739}
+  - component: {fileID: 558673741}
   m_Layer: 0
   m_Name: BackgroundSound
   m_TagString: Untagged
@@ -873,6 +876,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &558673741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 558673738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6326d00257494d9d8b2445af49ffc61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bgmClips:
+  - {fileID: 8300000, guid: df66f964bb884394888353044e859c8c, type: 3}
+  - {fileID: 8300000, guid: f22c7df422ca6854aa49616e6124bc94, type: 3}
 --- !u!1 &639682028
 GameObject:
   m_ObjectHideFlags: 0

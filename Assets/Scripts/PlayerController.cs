@@ -62,7 +62,8 @@ public class PlayerController : MonoBehaviour
                                 Mathf.Clamp(transform.position.y, stageData.LimitMin.y, stageData.LimitMax.y));
     }
 
-    public void OnDie() {
+    public void OnDie()
+    {
         // 디바이스에 획득한 점수 score 저장
         PlayerPrefs.SetInt("Score", score);
         // 플레이어 사망 시 nextSceneName 씬으로 이동 

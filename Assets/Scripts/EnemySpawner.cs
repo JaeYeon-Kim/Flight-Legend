@@ -91,5 +91,8 @@ public class EnemySpawner : MonoBehaviour
 
         // 보스 오브젝트 활성화 
         boss.SetActive(true);
+
+        // 보스가 첫번째 상태를 실행할 수 있도록 한다. 
+        boss.GetComponent<Boss>().ChangeState(BossState.MoveToAppearPoint);
     }
 }

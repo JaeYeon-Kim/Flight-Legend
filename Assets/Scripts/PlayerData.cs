@@ -15,6 +15,10 @@ public class PlayerData : MonoBehaviour
     private float maxExperience; // 최대 경험치 
 
     private int level;
+
+    private int attackLevel;        // 공격 레벨 
+    private float attackRate;       // 공격 속도(총알이 나가는 텀)
+
     private SpriteRenderer spriteRenderer;
     private PlayerController playerController;
 

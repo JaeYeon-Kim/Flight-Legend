@@ -13,7 +13,7 @@ public class EnemyProjectile : MonoBehaviour
         // 발사체에 부딪힌 오브젝트가 player 일 경우에만
         if(collision.CompareTag("Player")) {
             // 부딪힌 오브젝트 체력 감소 (플레이어)
-            collision.GetComponent<PlayerHP>().TakeDamage(damage);
+            collision.GetComponent<PlayerData>().TakeDamage(damage);
             // 발사체 오브젝트 삭제 
             Destroy(gameObject);
         }

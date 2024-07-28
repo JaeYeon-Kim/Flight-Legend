@@ -56,7 +56,7 @@ public class Enemy : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             // 적 공격력만큼 플레이어 체력 감소 
-            collision.GetComponent<PlayerHP>().TakeDamage(damage);
+            collision.GetComponent<PlayerData>().TakeDamage(damage);
 
 
             Destroy(gameObject);

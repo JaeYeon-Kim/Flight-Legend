@@ -7,6 +7,12 @@ using UnityEngine;
 public class PlayerData : MonoBehaviour
 {
 
+    [SerializeField] private GameObject playerHPSliderPrefab;       // 플레이어의 체력바를 나타내는 프리팹 
+
+    [SerializeField] private GameObject player;                 // 플레이어 
+
+    [SerializeField] private Transform canvasTransform;         // UI를 표현하는 Canvas 오브젝트의 Transform;
+
     [SerializeField]
     private float maxHp = 10; // 최대 체력
     private float currentHP;    // 현재 체력
@@ -18,6 +24,8 @@ public class PlayerData : MonoBehaviour
 
     private int attackLevel;        // 공격 레벨 
     private float attackRate;       // 공격 속도(총알이 나가는 텀)
+
+    private int attackDamage;       // 총알의 공격력 지정 
 
     private SpriteRenderer spriteRenderer;
     private PlayerController playerController;
@@ -45,6 +53,23 @@ public class PlayerData : MonoBehaviour
         currentExperience = 0;
         maxExperience = 100;
         level = 0;
+
+        CreatePlayerHPSlider(player);
+    }
+
+    // 시작 하면 플레이어의 위치를 중심으로 체력바 생성 
+    private void CreatePlayerHPSlider(GameObject targetPlayer) {
+        // 체력바 프리팹 생성
+        GameObject playerHpBarClone = Instantiate(playerHPSliderPrefab);
+
+        // 캔버스의 자식으로 설정 후에 크기 설정 
+        playerHpBarClone.transform.SetParent(canvasTransform);
+
+        // 1, 1, 1로 설정 
+        playerHpBarClone.transform.localScale = Vector3.one;
+
+        // Slider UI가 따라다닐 대상을 해당 객체로 설정 
+        playerHpBarClone.GetComponent<PlayerHPViewer>().Setup(targetPlayer.transform, targetPlayer.GetComponent<PlayerData>());
     }
 
     // 플레이어가 데미지를 입는 메서드 

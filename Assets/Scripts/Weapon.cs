@@ -1,10 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.Video;
-
 
 // 무기 스크립트 
 public class Weapon : MonoBehaviour
@@ -17,15 +17,44 @@ public class Weapon : MonoBehaviour
     [SerializeField]
     private int attackLevel = 1;    // 공격 레벨 
 
+    [SerializeField]
+    private int damage = 1;     // 공격력 
+
     // 공격 사운드 출력을 위한 변수 
     [SerializeField]
     private AudioClip audioClip;
     private AudioSource audioSource;
 
 
+    // ----------------------------------- Property ---------------------------------------// 
+
+    public int Damage => damage;
+
+    public float AttackRate => attackRate;
+
+    public int AttackLevel => attackLevel;
+
+
     private void Awake()
     {
         audioSource = GetComponent<AudioSource>();
+    }
+
+    // 능력 설정
+    public void setWeaponStat(int weaponNumber)
+    {
+        switch (weaponNumber)
+        {
+            case 1:
+                damage += 1;
+                break;
+            case 2:
+                attackRate += 0.1f;
+                break;
+            case 3:
+                attackLevel += 1;
+                break;
+        }
     }
 
 
@@ -39,22 +68,6 @@ public class Weapon : MonoBehaviour
     public void StopFiring()
     {
         StopCoroutine("TryAttack");
-    }
-
-
-    // 발사용 코루틴
-    IEnumerator TryAttack()
-    {
-        while (true)
-        {
-            SetAttackLevel();
-
-            // 공격 사운드 
-            audioSource.PlayOneShot(audioClip);
-
-            // attackRate 시간만큼 대기 
-            yield return new WaitForSeconds(attackRate);
-        }
     }
 
 
@@ -90,6 +103,25 @@ public class Weapon : MonoBehaviour
                 cloneBulletThird3.transform.position = transform.position + Vector3.up * 0.5f;
                 cloneBulletThird3.GetComponent<Movement2D>().MoveTo(new Vector3(0.2f, 1, 0));
                 break;
+
+            default:
+                Debug.Log("범위 초과야 !!");
+                break;
+        }
+    }
+
+    // 발사용 코루틴
+    IEnumerator TryAttack()
+    {
+        while (true)
+        {
+            SetAttackLevel();
+
+            // 공격 사운드 
+            audioSource.PlayOneShot(audioClip);
+
+            // attackRate 시간만큼 대기 
+            yield return new WaitForSeconds(attackRate);
         }
     }
 }

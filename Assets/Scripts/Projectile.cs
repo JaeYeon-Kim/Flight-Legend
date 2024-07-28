@@ -7,13 +7,22 @@ using UnityEngine.Pool;
 // 발사체 스크립트 
 public class Projectile : MonoBehaviour
 {
-    [SerializeField]
-    private int damage = 1;         // 총알의 공격력 
+    private int damage = 0;   // 총알 데미지 
     public IObjectPool<GameObject> Pool { get; set; }
 
     [SerializeField]
     private StageData stageData;
     private float destroyWeight = 2.0f;
+
+    private Weapon weapon;
+
+    private void Awake() {
+        weapon = GetComponent<Weapon>();
+    }
+
+    private void Start() {
+        damage = weapon.Damage;
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

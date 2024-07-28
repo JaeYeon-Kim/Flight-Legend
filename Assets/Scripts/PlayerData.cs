@@ -22,13 +22,11 @@ public class PlayerData : MonoBehaviour
 
     private int level;
 
-    private int attackLevel;        // 공격 레벨 
-    private float attackRate;       // 공격 속도(총알이 나가는 텀)
-
-    private int attackDamage;       // 총알의 공격력 지정 
-
     private SpriteRenderer spriteRenderer;
     private PlayerController playerController;
+
+
+    // ------------------------------------- Propery -------------------------------------------// 
 
     public float MaxHP => maxHp;        // maxHP 변수에 접근할 수 있는 프로퍼티 (Get만 가능)
     public float CurrentHP => currentHP;    // currenHP 변수에 접근할 수 있는 프로퍼티 (Get만 가능)
@@ -106,6 +104,8 @@ public class PlayerData : MonoBehaviour
         maxExperience *= 2;
         maxHp += 10;
         currentHP = maxHp;
+
+        GameManager.instance.LevelPopupOn();
     }
 
     // 플레이어가 체력을 입었을 경우 색상을 변경 해주는 코루틴 선언 

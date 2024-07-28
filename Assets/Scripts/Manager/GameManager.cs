@@ -11,9 +11,6 @@ public class GameManager : MonoBehaviour
     private GameObject LevelUpPopup;
     public static GameManager instance;
 
-    // 게임이 현재 일시정지 상태인지 확인 
-    private bool isPause = false;
-
     private void Awake()
     {
         if (instance == null)
@@ -39,18 +36,22 @@ public class GameManager : MonoBehaviour
 
     }
 
-    // 일시정지 
-    public void Pause()
-    {
-        if (!isPause)
-        {
-            Time.timeScale = 0; // 일시 정지 
-            LevelUpPopup.SetActive(true);
-        }
-        else
-        {
-            Time.timeScale = 1;     // 다시 게임 시작
-            LevelUpPopup.SetActive(false);
-        }
+    // 플레이어가 레벨업 되었을때 호출 되어 팝업창을 띄우는 메서드 
+    public void LevelPopupOn() {
+        // 게임 일시 정지
+        Time.timeScale = 0f;
+
+        // 레벨업 선택 창 띄우기 
+        LevelUpPopup.SetActive(true);
+    }
+
+    // 플레이어가 선택했을경우 해당 창을 다시 닫고 게임을 다시 시작
+    public void LevelPopupOff() {
+        // 게임 재 시작 
+        Time.timeScale = 1f;
+
+        // 레벨업 선택 창 없애기
+        LevelUpPopup.SetActive(false);
+
     }
 }

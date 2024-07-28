@@ -23,7 +23,7 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     private int damage = 1;         // 적 공격력 
     [SerializeField]
-    private int scorePoint = 100;   // 적 처치시 획득 점수
+    private int exp = 20;
 
     [SerializeField]
     private float attackRate = 1f;    // 공격 속도 
@@ -32,15 +32,21 @@ public class Enemy : MonoBehaviour
     private float detectionRange = 5f;  // 플레이어를 감지할 범위 
 
     private PlayerController playerController;
-    private Transform player;
+
+    private PlayerData playerData;
+    private Transform playerTrasform;
+
+    private GameObject player;
     private Vector2 shootDirection;
 
 
     private void Awake()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
         // 한번만 Find를 이용해 가져온다. 
-        playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
-        player = playerController.gameObject.transform;
+        playerController = player.GetComponent<PlayerController>();
+        playerTrasform = player.transform;
+        playerData = player.GetComponent<PlayerData>();
     }
 
 
@@ -71,13 +77,14 @@ public class Enemy : MonoBehaviour
 
         Destroy(gameObject);
 
-        // 플레이어의 점수 scorePoint 만큼 증가 시킴 
-        playerController.Score += scorePoint;
+
+        // 플레이어의 경험치 증가시킴 
+        playerData.GainExperience(exp);
     }
 
     private void Shoot()
     {
-        shootDirection = (player.position - transform.position).normalized;
+        shootDirection = (playerTrasform.position - transform.position).normalized;
         // 총알 발사 
         GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
         bullet.GetComponent<Movement2D>().MoveTo(shootDirection);
@@ -96,7 +103,7 @@ public class Enemy : MonoBehaviour
 
                 Debug.Log("플레이어 맞아!!!");
                 // 총알을 발사할 방항 계산
-                float distancePlayer = Vector2.Distance(transform.position, player.position);
+                float distancePlayer = Vector2.Distance(transform.position, playerTrasform.position);
 
                 // 플레이어가 일정 범위 안에 있으면 총알 발사 
                 if (distancePlayer <= detectionRange)

@@ -106,7 +106,6 @@ public class PlayerData : MonoBehaviour
         maxExperience *= 2;
         maxHp += 10;
         currentHP = maxHp;
-        
     }
 
     // 플레이어가 체력을 입었을 경우 색상을 변경 해주는 코루틴 선언 

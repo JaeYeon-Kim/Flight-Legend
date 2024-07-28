@@ -27,7 +27,7 @@ public class PlayerHPViewer : MonoBehaviour
 
     private void Update()
     {
-        // 체력바의 초기값을 설정 해줌 
+        // 비율로 넣어서 정의해줌 
         hpSlider.value = playerData.CurrentHP / playerData.MaxHP;
     }
 

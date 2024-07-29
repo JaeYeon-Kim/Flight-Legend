@@ -9,16 +9,19 @@ using UnityEngine.Video;
 // 무기 스크립트 
 public class Weapon : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject projectilePrefab;    // 공격할 때 생성되는 발사체 프리팹 
-    [SerializeField]
-    private float attackRate = 0.1f;    // 공격 속도 
+    [SerializeField] private GameObject projectilePrefab;    // 공격할 때 생성되는 발사체 프리팹 
+    [SerializeField] private float attackRate = 0.5f;    // 공격 속도 
 
-    [SerializeField]
-    private int attackLevel = 1;    // 공격 레벨 
+    [SerializeField] private int attackLevel = 1;    // 공격 레벨 
 
-    [SerializeField]
-    private int damage = 1;     // 공격력 
+    [SerializeField] private int damage = 1;     // 공격력 
+
+
+    // 능력의 제한 레벨을 설정
+    [SerializeField] private float maxAttackRate = 0.1f;        // 공격 속도의 최대 속도 
+    [SerializeField] private int maxAttackLevel = 3;            // 공격 레벨의 최대 레벨 
+
+    [SerializeField] private int maxAttackDamage = 5;           // 공격력 최대치
 
     // 공격 사운드 출력을 위한 변수 
     [SerializeField]
@@ -33,6 +36,12 @@ public class Weapon : MonoBehaviour
     public float AttackRate => attackRate;
 
     public int AttackLevel => attackLevel;
+
+    public float MaxAttackRate => maxAttackRate; 
+
+    public int MaxAttackLevel => maxAttackLevel;
+
+    public int MaxAttackDamage => maxAttackDamage;
 
 
     private void Awake()
@@ -49,7 +58,7 @@ public class Weapon : MonoBehaviour
                 damage += 1;
                 break;
             case 2:
-                attackRate += 0.1f;
+                attackRate -= 0.1f;
                 break;
             case 3:
                 attackLevel += 1;

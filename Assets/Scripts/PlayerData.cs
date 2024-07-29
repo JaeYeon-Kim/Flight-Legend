@@ -110,7 +110,7 @@ public class PlayerData : MonoBehaviour
         currentHP = maxHp;
 
         // 레벨업 시 이벤트 호출 
-        onLevelUp?.Invoke();   
+        onLevelUp?.Invoke();        
     }
 
     // 플레이어가 체력을 입었을 경우 색상을 변경 해주는 코루틴 선언 

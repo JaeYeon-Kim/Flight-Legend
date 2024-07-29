@@ -7,7 +7,6 @@ public class ExplosionAutoDestroyer : MonoBehaviour
 
     private Animator animator;
 
-    private float explosionTime = 0;
     private void Awake()
     {
         animator = GetComponent<Animator>();
@@ -16,9 +15,6 @@ public class ExplosionAutoDestroyer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        explosionTime += Time.deltaTime;
-        if(explosionTime > 1.0f) Destroy(gameObject);
-        /*
         // 폭발 애니메이션 재생이 끝나면 삭제 
         if (animator.GetCurrentAnimatorStateInfo(0).IsName("Explosion") == true)
         {
@@ -36,6 +32,5 @@ public class ExplosionAutoDestroyer : MonoBehaviour
         {
             Debug.Log("원하는 애니메이션이 아님");
         }
-        */
     }
 }

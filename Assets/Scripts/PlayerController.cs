@@ -13,6 +13,9 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField]
     private KeyCode keyCodeAttack = KeyCode.Space;      // 공격키 설정 
+
+    [SerializeField]
+    private KeyCode keyCodeBomb = KeyCode.B;            // 플레이어 필살기 
     private Movement2D movement2D;
 
     private Weapon weapon;
@@ -52,6 +55,12 @@ public class PlayerController : MonoBehaviour
         else if (Input.GetKeyUp(keyCodeAttack))
         {
             weapon.StopFiring();
+        }
+
+
+        // 플레이어 폭탄 발사 
+        if (Input.GetKeyDown(keyCodeBomb)) {
+            weapon.CreateBoomAttack();
         }
     }
 

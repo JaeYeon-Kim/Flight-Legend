@@ -9,12 +9,17 @@ using UnityEngine.Video;
 // 무기 스크립트 
 public class Weapon : MonoBehaviour
 {
+
+
     [SerializeField] private GameObject projectilePrefab;    // 공격할 때 생성되는 발사체 프리팹 
     [SerializeField] private float attackRate = 0.5f;    // 공격 속도 
 
     [SerializeField] private int attackLevel = 1;    // 공격 레벨 
 
     [SerializeField] private int damage = 1;     // 공격력 
+
+    [SerializeField] private GameObject bombPrefab;     // 필살기(폭탄) 프리팹
+    private int bombCount = 2;          // 사용할 수 있는 폭탄 횟수 
 
 
     // 능력의 제한 레벨을 설정
@@ -37,7 +42,7 @@ public class Weapon : MonoBehaviour
 
     public int AttackLevel => attackLevel;
 
-    public float MaxAttackRate => maxAttackRate; 
+    public float MaxAttackRate => maxAttackRate;
 
     public int MaxAttackLevel => maxAttackLevel;
 
@@ -131,6 +136,18 @@ public class Weapon : MonoBehaviour
 
             // attackRate 시간만큼 대기 
             yield return new WaitForSeconds(attackRate);
+        }
+    }
+
+
+    // 폭탄 발사 코루틴
+    public void CreateBoomAttack()
+    {
+        // 폭탄 횟수가 1개라도 있으면 사용 가능 
+        if (bombCount > 0)
+        {
+            bombCount--;            // 폭탄 횟수 1 감소 
+            Instantiate(bombPrefab, transform.position, Quaternion.identity);
         }
     }
 }

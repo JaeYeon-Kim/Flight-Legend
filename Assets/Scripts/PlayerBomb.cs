@@ -16,14 +16,11 @@ public class PlayerBomb : MonoBehaviour
     [SerializeField] GameObject bombPrefab;             // 폭발 프리팹 
 
 
-    private float destroyTime = 5f;
-
-
     // Start is called before the first frame update
     void Start()
     {
         StartCoroutine(CreateExplosionEffect());
-        
+
         Destroy(gameObject, 6f);
     }
 

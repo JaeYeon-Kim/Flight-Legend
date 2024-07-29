@@ -10,11 +10,7 @@ public class LevelPopupSetting : MonoBehaviour
 {
     public event Action onPlayerSelectAbility;
     [SerializeField] GameObject[] abilityList;      // 능력을 담을 리스트 : 공격속도, 공격력, 공격레벨 
-    [SerializeField] private Weapon weapon;         // 무기 관련 스크립트 
-    private void Start()
-    {
-
-    }
+    [SerializeField] private Weapon weapon;         // 무기 관련 스크립트
 
     private void OnEnable()
     {

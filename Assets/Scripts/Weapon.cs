@@ -49,7 +49,7 @@ public class Weapon : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
     }
 
-    // 능력 설정
+    // 능력 값을 실제로 변경해줌 
     public void setWeaponStat(int weaponNumber)
     {
         switch (weaponNumber)

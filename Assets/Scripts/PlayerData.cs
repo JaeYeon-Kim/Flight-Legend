@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,9 @@ using UnityEngine;
 // 플레이어 데이터 관리 스크립트
 public class PlayerData : MonoBehaviour
 {
+
+    // ----------------------- Event ------------------------------ // 
+    public event Action onLevelUp;
 
     [SerializeField] private GameObject playerHPSliderPrefab;       // 플레이어의 체력바를 나타내는 프리팹 
 
@@ -105,7 +109,8 @@ public class PlayerData : MonoBehaviour
         maxHp += 10;
         currentHP = maxHp;
 
-        GameManager.instance.LevelPopupOn();
+        // 레벨업 시 이벤트 호출 
+        onLevelUp?.Invoke();   
     }
 
     // 플레이어가 체력을 입었을 경우 색상을 변경 해주는 코루틴 선언 

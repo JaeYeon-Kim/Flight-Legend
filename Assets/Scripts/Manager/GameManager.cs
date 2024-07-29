@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
 
     [SerializeField]
     private GameObject LevelUpPopup;
+    [SerializeField]
+    private PlayerData playerData;
     public static GameManager instance;
 
     private void Awake()
@@ -25,19 +27,18 @@ public class GameManager : MonoBehaviour
         LevelUpPopup.SetActive(false);      // 레벨업 팝업 비활성화 
     }
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
+        // 레벨업 이벤트 구독 
+        if (playerData != null)
+        {
+            playerData.onLevelUp += LevelPopupOn;
+        }
     }
 
     // 플레이어가 레벨업 되었을때 호출 되어 팝업창을 띄우는 메서드 
-    public void LevelPopupOn() {
+    public void LevelPopupOn()
+    {
         // 게임 일시 정지
         Time.timeScale = 0f;
 
@@ -46,7 +47,8 @@ public class GameManager : MonoBehaviour
     }
 
     // 플레이어가 선택했을경우 해당 창을 다시 닫고 게임을 다시 시작
-    public void LevelPopupOff() {
+    public void LevelPopupOff()
+    {
         // 게임 재 시작 
         Time.timeScale = 1f;
 

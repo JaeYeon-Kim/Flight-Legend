@@ -100,15 +100,12 @@ public class Enemy : MonoBehaviour
 
             if (player != null)
             {
-
-                Debug.Log("플레이어 맞아!!!");
                 // 총알을 발사할 방항 계산
                 float distancePlayer = Vector2.Distance(transform.position, playerTrasform.position);
 
                 // 플레이어가 일정 범위 안에 있으면 총알 발사 
                 if (distancePlayer <= detectionRange)
                 {
-                    Debug.Log("범위 안으로 들어왔다구!!");
                     Shoot();
                 }
             }

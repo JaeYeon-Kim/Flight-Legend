@@ -148,7 +148,7 @@ public class Weapon : MonoBehaviour
         }
     }
 
-
+    // 필살기 공격 메서드 
     public void CreateBoomAttack()
     {
         // 폭탄 횟수가 1개라도 있으면 사용 가능 
@@ -157,5 +157,11 @@ public class Weapon : MonoBehaviour
             bombCount--;            // 폭탄 횟수 1 감소 
             Instantiate(bombPrefab, transform.position, Quaternion.identity);
         }
+    }
+
+    // 폭탄 횟수 증가 메서드 
+    public void CreateBombCount()
+    {
+        bombCount++;
     }
 }

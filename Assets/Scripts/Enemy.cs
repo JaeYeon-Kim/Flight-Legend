@@ -1,7 +1,6 @@
+
 using System;
 using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.Animations;
 using UnityEngine;
 
 
@@ -17,19 +16,16 @@ public class Enemy : MonoBehaviour
 
     [SerializeField] private GameObject bulletPrefab; // 발사할 총알 프리팹
 
-    [SerializeField]
-    private GameObject explosionPrefab;
+    [SerializeField] private GameObject explosionPrefab;     // 적 파괴시 폭발 효과를 나타내는 프리팹
 
-    [SerializeField]
-    private int damage = 1;         // 적 공격력 
-    [SerializeField]
-    private int exp = 20;
+    [SerializeField] private GameObject[] itemPrefabs;      // 적 처치시 획득 가능한 아이템 리스트들 
 
-    [SerializeField]
-    private float attackRate = 1f;    // 공격 속도 
+    [SerializeField] private int damage = 1;         // 적 공격력 
+    [SerializeField] private int exp = 20;
 
-    [SerializeField]
-    private float detectionRange = 5f;  // 플레이어를 감지할 범위 
+    [SerializeField] private float attackRate = 1f;    // 공격 속도 
+
+    [SerializeField] private float detectionRange = 5f;  // 플레이어를 감지할 범위 
 
     private PlayerController playerController;
 
@@ -72,14 +68,30 @@ public class Enemy : MonoBehaviour
     // 적개체 (본인)이 죽을 경우 호출되는 메서드 
     public void OnDie()
     {
-        // 적 개체가 사망할경우 그자리에 폭발 이펙트 생성 
-        Instantiate(explosionPrefab, transform.position, Quaternion.identity);
-
-        Destroy(gameObject);
-
 
         // 플레이어의 경험치 증가시킴 
         playerData.GainExperience(exp);
+
+        // 적 개체가 사망할경우 그자리에 폭발 이펙트 생성 
+        Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+
+        // 적 처치시 일정 확률로 아이템을 생성 해준다. 
+        SpawnItem();
+
+        // 오브젝트 파괴 
+        Destroy(gameObject);
+    }
+
+    // 아이템을 생성하는 메서드
+    private void SpawnItem() {
+
+        // 필살기 아이템 
+        int bombItemPercentage = UnityEngine.Random.Range(0, 100);
+
+        if(bombItemPercentage < 5) {
+            Instantiate(itemPrefabs[0], transform.position, Quaternion.identity);
+        }
+        
     }
 
     private void Shoot()

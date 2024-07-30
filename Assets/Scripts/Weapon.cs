@@ -48,6 +48,8 @@ public class Weapon : MonoBehaviour
 
     public int MaxAttackDamage => maxAttackDamage;
 
+    public int BombCount => bombCount;
+
 
     private void Awake()
     {

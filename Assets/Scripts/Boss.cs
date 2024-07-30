@@ -23,6 +23,8 @@ public class Boss : MonoBehaviour
 
     private float fadeDuration = 2.0f;          // 페이드 아웃에 걸리는 시간 
 
+    [SerializeField] private GameObject sliderBossHP;       // 보스 체력바 
+
     [SerializeField] private GameObject bossExplosionPrefab;        // 보스 사망시 폭발효과 프리팹
 
     [SerializeField] private GameObject[] bossExplosionPointList;  // 보스가 사망할 경우 폭발 효과를 나타내는 Point 리스트 
@@ -84,6 +86,7 @@ public class Boss : MonoBehaviour
 
         spriteRenderer.color = endColor;
         yield return new WaitForSeconds(0.5f);
+        sliderBossHP.SetActive(false);
         Destroy(gameObject);
     }
 

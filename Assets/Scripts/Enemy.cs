@@ -1,6 +1,7 @@
 
 using System;
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
 
@@ -89,7 +90,8 @@ public class Enemy : MonoBehaviour
         int bombItemPercentage = UnityEngine.Random.Range(0, 100);
 
         if(bombItemPercentage < 5) {
-            Instantiate(itemPrefabs[0], transform.position, Quaternion.identity);
+            GameObject cloneBombItem = Instantiate(itemPrefabs[0], transform.position, Quaternion.identity);
+            cloneBombItem.GetComponent<Item>().playerTransform = this.playerTrasform;
         }
         
     }

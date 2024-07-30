@@ -114,6 +114,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemType: 0
+  playerTransform: {fileID: 0}
+  magnetMoveSpeed: 6
+  magnetDistance: 4
 --- !u!61 &-7525920808344727887
 BoxCollider2D:
   m_ObjectHideFlags: 0

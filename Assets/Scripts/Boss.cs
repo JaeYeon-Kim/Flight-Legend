@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public enum BossState { MoveToAppearPoint = 0, Phase01, Phase02, Phase03 }
+public enum BossState { MoveToAppearPoint = 0, Phase01, Phase02, Phase03, Idle }
 
 
 // 보스 구현 스크립트 
@@ -19,14 +19,24 @@ public class Boss : MonoBehaviour
     private BossWeapon bossWeapon;
     private BossData bossData;
 
+    private SpriteRenderer spriteRenderer;
+
+    private float fadeDuration = 2.0f;          // 페이드 아웃에 걸리는 시간 
+
+    [SerializeField] private GameObject bossExplosionPrefab;        // 보스 사망시 폭발효과 프리팹
+
+    [SerializeField] private GameObject[] bossExplosionPointList;  // 보스가 사망할 경우 폭발 효과를 나타내는 Point 리스트 
+
 
     private void Awake()
     {
+        spriteRenderer = GetComponent<SpriteRenderer>();
         movement2D = GetComponent<Movement2D>();
         bossWeapon = GetComponent<BossWeapon>();
         bossData = GetComponent<BossData>();
     }
 
+    // 보스 상태 변경 메서드 
     public void ChangeState(BossState newState)
     {
         // State를 코루틴 메서드 이름과 일치시켜 실행
@@ -37,6 +47,44 @@ public class Boss : MonoBehaviour
 
         // 새로운 상태 재생
         StartCoroutine(bossState.ToString());
+    }
+
+
+    // 보스의 사망 관리 메서드 
+    public void OnDie()
+    {
+        ChangeState(BossState.Idle);
+        // 서서히 흐려지면서 폭발 효과를 줌 
+        StartCoroutine(BossFadeOut());
+    }
+
+
+    // 서서히 흐려지는 효과 
+    private IEnumerator BossFadeOut()
+    {
+        Color startColor = spriteRenderer.color;
+        Color endColor = new Color(startColor.r, startColor.g, startColor.b, 0f);       // startColor와 동일하며 알파값만 0f;
+        float timeElapsed = 0f;
+
+
+        // 폭발 이펙트를 포인트 리스트의 각 포인트에 생성
+        foreach (GameObject explosionPoint in bossExplosionPointList)
+        {
+            GameObject cloneExplosionPrefab = Instantiate(bossExplosionPrefab, explosionPoint.transform.position, Quaternion.identity);
+            yield return new WaitForSeconds(1.0f);
+            Destroy(cloneExplosionPrefab);
+        }
+
+        while (timeElapsed < fadeDuration)
+        {
+            timeElapsed += Time.deltaTime;
+            spriteRenderer.color = Color.Lerp(startColor, endColor, timeElapsed / fadeDuration);
+            yield return null;
+        }
+
+        spriteRenderer.color = endColor;
+        yield return new WaitForSeconds(0.5f);
+        Destroy(gameObject);
     }
 
     IEnumerator MoveToAppearPoint()
@@ -139,5 +187,19 @@ public class Boss : MonoBehaviour
             yield return null;
         }
 
+    }
+
+
+    // 정지 상태 코루틴
+    private IEnumerator Idle()
+    {
+        // 현재 공격하는 상태를 모두 멈춤
+        bossWeapon.StopFiring(AttackType.CircleFire);
+        bossWeapon.StopFiring(AttackType.SingleFireToCenterPosition);
+
+        // 보스가 움직이고 있다면 제자리에 멈추게함
+        movement2D.enabled = false;
+
+        yield return new WaitForSeconds(0.5f);
     }
 }

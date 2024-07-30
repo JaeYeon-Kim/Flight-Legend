@@ -11,6 +11,8 @@ public class BossData : MonoBehaviour
     private float currentHP;    // 현재 체력
     private SpriteRenderer spriteRenderer;
 
+    private Boss boss;      // Boss 객체 
+
     // 보스 체력 프로퍼티 
     public float MaxHP => maxHP;
     public float CurrentHP => currentHP;
@@ -19,6 +21,7 @@ public class BossData : MonoBehaviour
     {
         currentHP = maxHP;      // 현재 체력을 최대 체력과 같게 설정 
         spriteRenderer = GetComponent<SpriteRenderer>();
+        boss = GetComponent<Boss>();
     }
 
 
@@ -34,6 +37,7 @@ public class BossData : MonoBehaviour
         if (currentHP <= 0)
         {
             // Die 처리 
+            boss.OnDie();
         }
     }
 

@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fd0b7948f777483b8ab2815938eb23e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  moveSpeed: 4
   moveDirection: {x: 0, y: -1, z: 0}
 --- !u!58 &5653983699344535914
 CircleCollider2D:
@@ -158,7 +158,7 @@ MonoBehaviour:
   damage: 1
   exp: 20
   attackRate: 1
-  detectionRange: 5
+  detectionRange: 10
 --- !u!114 &-8496949822121691529
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -184,4 +184,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b3688424796042d1957e907731ead06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 4
+  maxHP: 6

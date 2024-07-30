@@ -168,7 +168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fd0b7948f777483b8ab2815938eb23e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 4
+  moveSpeed: 2
   moveDirection: {x: 0, y: -1, z: 0}
 --- !u!114 &2295732988787709403
 MonoBehaviour:
@@ -203,7 +203,7 @@ MonoBehaviour:
   damage: 1
   exp: 20
   attackRate: 1
-  detectionRange: 5
+  detectionRange: 10
 --- !u!114 &1395907549831275960
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -216,4 +216,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b3688424796042d1957e907731ead06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 4
+  maxHP: 7

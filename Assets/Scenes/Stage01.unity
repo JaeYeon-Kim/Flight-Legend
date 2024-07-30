@@ -794,7 +794,7 @@ MonoBehaviour:
   enemyHPSliderPrefab: {fileID: 691592155398333302, guid: 4c233b6dfdbd24c048de4de0ecbd627b, type: 3}
   canvasTransform: {fileID: 639682032}
   sliderBossHP: {fileID: 1406703954}
-  spawnTime: 1
+  spawnTime: 2
   maxEnemyCount: 100
   soundManager: {fileID: 558673741}
 --- !u!4 &199485437

@@ -11,6 +11,11 @@ public class Item : MonoBehaviour
     [SerializeField] private float magnetMoveSpeed = 2f;       // 자석 처럼 끌려갈때 아이템의 이동속도 
     [SerializeField] private float magnetDistance = 5f;        // 자석이 작용 하는 거리 
 
+    [SerializeField] private AudioClip audioClip;       // 효과음 재생용 음악
+
+    private AudioSource audioSource;   // 효과음 재생을 위한 변수 
+
+
     private Movement2D movement2D;                          // 아이템의 이동
 
     public Transform playerTransform;                       // 플레이어 position을 가져오기 위함 
@@ -19,6 +24,7 @@ public class Item : MonoBehaviour
     private void Awake()
     {
         movement2D = GetComponent<Movement2D>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void Start()
@@ -45,22 +51,33 @@ public class Item : MonoBehaviour
             // 아이템 획득 할 경우 나타나는 효과
             UseItem(collision.gameObject);
 
-            // 플레이어가 획득하였을 경우 오브젝트 삭제 
             Destroy(gameObject);
+
+            PlaySound();
         }
     }
 
+    // 아이템을 획득했을 경우 타입으로 분리 
     private void UseItem(GameObject player)
     {
         switch (itemType)
         {
+            // 플레이어 폭탄 횟수 증가 
             case ItemType.PlayerBomb:
                 player.GetComponent<Weapon>().BombCountUp();
                 break;
 
+            // 플레이어 별 갯수 증가 
             case ItemType.Star:
-                p
-            break;
+                player.GetComponent<PlayerData>().StarCountUp();
+                break;
+        }
+    }
+
+    private void PlaySound()
+    {
+        if (audioClip != null) {
+            SoundManager.Instance.PlayEffectSound(audioClip);
         }
     }
 }

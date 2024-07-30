@@ -84,16 +84,30 @@ public class Enemy : MonoBehaviour
     }
 
     // 아이템을 생성하는 메서드
-    private void SpawnItem() {
+    private void SpawnItem()
+    {
 
         // 필살기 아이템 
-        int bombItemPercentage = UnityEngine.Random.Range(0, 100);
+        int spawnItemPercentage = UnityEngine.Random.Range(0, 100);
 
-        if(bombItemPercentage < 5) {
-            GameObject cloneBombItem = Instantiate(itemPrefabs[0], transform.position, Quaternion.identity);
+        if (spawnItemPercentage < 30)           // 30% 확률로 별 아이템 획득, 1 ~ 5개 랜덤 
+        {
+            int randomStarCount = UnityEngine.Random.Range(1, 6);   // 1 ~ 5까지 갯수 랜덤
+
+            for (int i = 0; i < randomStarCount; i++)
+            {
+                float x = UnityEngine.Random.Range(-0.4f, 0.4f);
+                float y = UnityEngine.Random.Range(-0.4f, 0.4f);
+                GameObject cloneStarItem = Instantiate(itemPrefabs[0], new Vector3(x, y, 0), Quaternion.identity);
+                cloneStarItem.GetComponent<Item>().playerTransform = this.playerTrasform;
+            }
+
+        }
+        else if (spawnItemPercentage < 35)      // 5% 확률로 플레이어 필살기 아이템 획득 
+        {
+            GameObject cloneBombItem = Instantiate(itemPrefabs[1], transform.position, Quaternion.identity);
             cloneBombItem.GetComponent<Item>().playerTransform = this.playerTrasform;
         }
-        
     }
 
     private void Shoot()

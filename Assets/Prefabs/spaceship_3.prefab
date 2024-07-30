@@ -198,6 +198,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 1582158913979132, guid: eb37e015fa916944c81e05758e6ce0b6, type: 3}
   explosionPrefab: {fileID: 760678370071004918, guid: 2f86dcddc2cce495d9cc2cccc91606d4, type: 3}
   itemPrefabs:
+  - {fileID: 3234111536781107307, guid: 49b841bc6485f4000ba0db2c9b1e1053, type: 3}
   - {fileID: 5984542807577607002, guid: 537bdbc6a99a346bb90b119b33b5b3ba, type: 3}
   damage: 1
   exp: 20

@@ -1533,7 +1533,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bgmClips:
   - {fileID: 8300000, guid: df66f964bb884394888353044e859c8c, type: 3}
-  - {fileID: 8300000, guid: f22c7df422ca6854aa49616e6124bc94, type: 3}
+  - {fileID: 8300000, guid: c02b8601e47ef7145a69acd86640c41d, type: 3}
 --- !u!1 &639682028
 GameObject:
   m_ObjectHideFlags: 0

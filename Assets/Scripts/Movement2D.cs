@@ -7,15 +7,8 @@ using UnityEngine;
 public class Movement2D : MonoBehaviour
 {
 
-    [SerializeField]
-    private float moveSpeed = 0.0f;     // 이동 스피드 
-    [SerializeField]
-    private Vector3 moveDirection = Vector3.zero;       // 이동하는 방향 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private float moveSpeed = 0.0f;     // 이동 스피드 
+    [SerializeField] private Vector3 moveDirection = Vector3.zero;       // 이동하는 방향 
 
     // Update is called once per frame
     void Update()

@@ -29,8 +29,7 @@ public class Weapon : MonoBehaviour
     [SerializeField] private int maxAttackDamage = 5;           // 공격력 최대치
 
     // 공격 사운드 출력을 위한 변수 
-    [SerializeField]
-    private AudioClip audioClip;
+    [SerializeField] private AudioClip audioClip;
     private AudioSource audioSource;
 
 
@@ -160,7 +159,7 @@ public class Weapon : MonoBehaviour
     }
 
     // 폭탄 횟수 증가 메서드 
-    public void CreateBombCount()
+    public void BombCountUp()
     {
         bombCount++;
     }

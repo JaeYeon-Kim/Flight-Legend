@@ -6,8 +6,7 @@ using UnityEngine;
 // 일반 몬스터 및 보스가 사용하는 총알 스크립트 
 public class EnemyProjectile : MonoBehaviour
 {
-    [SerializeField]
-    private int damage = 1;
+    [SerializeField] private int damage = 1;
 
     private void OnTriggerEnter2D(Collider2D collision) {
         // 발사체에 부딪힌 오브젝트가 player 일 경우에만

@@ -17,14 +17,15 @@ public class PlayerData : MonoBehaviour
 
     [SerializeField] private Transform canvasTransform;         // UI를 표현하는 Canvas 오브젝트의 Transform;
 
-    [SerializeField]
-    private float maxHp = 10; // 최대 체력
+    [SerializeField] private float maxHp = 10; // 최대 체력
     private float currentHP;    // 현재 체력
 
     private float currentExperience; // 현재 경험치
     private float maxExperience; // 최대 경험치 
 
-    private int level;
+    private int level;              // 플레이어의 레벨 
+
+    private int starCount;          // 플레이어의 별 갯수 
 
     private SpriteRenderer spriteRenderer;
     private PlayerController playerController;
@@ -41,6 +42,8 @@ public class PlayerData : MonoBehaviour
 
     public int Level => level;
 
+    public int StarCount => starCount;
+
 
 
     private void Awake()
@@ -51,16 +54,19 @@ public class PlayerData : MonoBehaviour
 
     private void Start()
     {
+        // 플레이어 기본 데이터 초기화 
         currentHP = maxHp;
         currentExperience = 0;
         maxExperience = 100;
         level = 0;
+        starCount = 0;
 
         CreatePlayerHPSlider(player);
     }
 
     // 시작 하면 플레이어의 위치를 중심으로 체력바 생성 
-    private void CreatePlayerHPSlider(GameObject targetPlayer) {
+    private void CreatePlayerHPSlider(GameObject targetPlayer)
+    {
         // 체력바 프리팹 생성
         GameObject playerHpBarClone = Instantiate(playerHPSliderPrefab);
 
@@ -92,16 +98,19 @@ public class PlayerData : MonoBehaviour
     }
 
     // 플레이어가 경험치를 얻는 메서드 
-    public void GainExperience(int amount) {
+    public void GainExperience(int amount)
+    {
         currentExperience += amount;
-        if (currentExperience >= maxExperience) {
+        if (currentExperience >= maxExperience)
+        {
             LevelUp();
         }
     }
 
 
     // 레벨업시 호출되는 메서드 
-    void LevelUp() {
+    private void LevelUp()
+    {
         level++;
 
         currentExperience = 0;
@@ -110,7 +119,12 @@ public class PlayerData : MonoBehaviour
         currentHP = maxHp;
 
         // 레벨업 시 이벤트 호출 
-        onLevelUp?.Invoke();        
+        onLevelUp?.Invoke();
+    }
+
+    // 플레이어의 보유 별 갯수 증가 
+    public void StarCountUp() {
+        starCount++;
     }
 
     // 플레이어가 체력을 입었을 경우 색상을 변경 해주는 코루틴 선언 

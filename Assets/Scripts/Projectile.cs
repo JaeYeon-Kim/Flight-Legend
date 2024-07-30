@@ -10,8 +10,7 @@ public class Projectile : MonoBehaviour
     private int damage = 1;   // 총알 데미지 
     public IObjectPool<GameObject> Pool { get; set; }
 
-    [SerializeField]
-    private StageData stageData;
+    [SerializeField] private StageData stageData;
     private float destroyWeight = 2.0f;
 
     private Weapon weapon;

@@ -188,6 +188,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stageData: {fileID: 11400000, guid: d1056eb88fdf84f0c8317c3e78386507, type: 2}
+  weapon: {fileID: 3220538083469791453, guid: b9d475bed5b0241d28fa92e7070b0ff2, type: 3}
 --- !u!114 &-4816073023195570112
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -204,4 +205,8 @@ MonoBehaviour:
   attackRate: 0.1
   attackLevel: 1
   damage: 1
+  bombPrefab: {fileID: 4321224307825986550, guid: 69beb2abe3228483d830bfbf05a0e824, type: 3}
+  maxAttackRate: 0.1
+  maxAttackLevel: 3
+  maxAttackDamage: 5
   audioClip: {fileID: 8300000, guid: f9bc0b97b4bd03c479dd8c396eb116ca, type: 3}

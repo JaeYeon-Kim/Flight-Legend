@@ -56,7 +56,7 @@ public class LevelPopupSetting : MonoBehaviour
             case 1:
                 {
                     Debug.Log("공격 속도 강화");
-                    weapon.setWeaponStat(type);
+                    weapon.SetWeaponStat(type);
                     onPlayerSelectAbility?.Invoke();
                 }
                 break;
@@ -64,7 +64,7 @@ public class LevelPopupSetting : MonoBehaviour
             case 2:
                 {
                     Debug.Log("공격력 강화");
-                    weapon.setWeaponStat(type);
+                    weapon.SetWeaponStat(type);
                     onPlayerSelectAbility?.Invoke();
 
                 }
@@ -73,7 +73,7 @@ public class LevelPopupSetting : MonoBehaviour
             case 3:
                 {
                     Debug.Log("공격 레벨 강화");
-                    weapon.setWeaponStat(type);
+                    weapon.SetWeaponStat(type);
                     onPlayerSelectAbility?.Invoke();
 
                 }

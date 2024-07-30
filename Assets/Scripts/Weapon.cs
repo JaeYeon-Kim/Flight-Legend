@@ -55,15 +55,16 @@ public class Weapon : MonoBehaviour
     }
 
     // 능력 값을 실제로 변경해줌 
-    public void setWeaponStat(int weaponNumber)
+    public void SetWeaponStat(int weaponNumber)
     {
         switch (weaponNumber)
         {
             case 1:
-                damage += 1;
+                attackRate -= 0.1f;
                 break;
             case 2:
-                attackRate -= 0.1f;
+                damage += 1;
+                Debug.Log("증가한 데미지" + damage);
                 break;
             case 3:
                 attackLevel += 1;
@@ -95,26 +96,32 @@ public class Weapon : MonoBehaviour
             case 1:
                 var cloneBullet = ObjectPoolManager.instance.Pool.Get();
                 cloneBullet.transform.position = transform.position + Vector3.up * 0.5f;
+                cloneBullet.GetComponent<Projectile>().SetDamage(this.damage);
                 break;
             // Level2: 간격을 두고 전방으로 발사체 3개 생성 
             case 2:
                 var cloneBulletSecond = ObjectPoolManager.instance.Pool.Get();
                 cloneBulletSecond.transform.position = transform.position + Vector3.up * 0.5f + Vector3.left * 0.2f;
+                cloneBulletSecond.GetComponent<Projectile>().SetDamage(this.damage);
                 var cloneBulletSecond2 = ObjectPoolManager.instance.Pool.Get();
                 cloneBulletSecond2.transform.position = transform.position + Vector3.up * 0.5f + Vector3.right * 0.2f;
+                cloneBulletSecond.GetComponent<Projectile>().SetDamage(this.damage);
                 break;
             // Level3: 전방으로 발사체 1개, 좌우 대각선 방향으로 발사체 각 1개     
             case 3:
                 var cloneBulletThird = ObjectPoolManager.instance.Pool.Get();
                 cloneBulletThird.transform.position = transform.position + Vector3.up * 0.5f;
+                cloneBulletThird.GetComponent<Projectile>().SetDamage(this.damage);
                 cloneBulletThird.GetComponent<Movement2D>().MoveTo(new Vector3(0f, 1, 0));
 
                 var cloneBulletThird2 = ObjectPoolManager.instance.Pool.Get();
                 cloneBulletThird2.transform.position = transform.position + Vector3.up * 0.5f;
+                cloneBulletThird2.GetComponent<Projectile>().SetDamage(this.damage);
                 cloneBulletThird2.GetComponent<Movement2D>().MoveTo(new Vector3(-0.2f, 1, 0));
 
                 var cloneBulletThird3 = ObjectPoolManager.instance.Pool.Get();
                 cloneBulletThird3.transform.position = transform.position + Vector3.up * 0.5f;
+                cloneBulletThird3.GetComponent<Projectile>().SetDamage(this.damage);
                 cloneBulletThird3.GetComponent<Movement2D>().MoveTo(new Vector3(0.2f, 1, 0));
                 break;
 
@@ -140,7 +147,6 @@ public class Weapon : MonoBehaviour
     }
 
 
-    // 폭탄 발사 코루틴
     public void CreateBoomAttack()
     {
         // 폭탄 횟수가 1개라도 있으면 사용 가능 

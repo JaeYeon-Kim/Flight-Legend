@@ -794,8 +794,8 @@ MonoBehaviour:
   enemyHPSliderPrefab: {fileID: 691592155398333302, guid: 4c233b6dfdbd24c048de4de0ecbd627b, type: 3}
   canvasTransform: {fileID: 639682032}
   sliderBossHP: {fileID: 1406703954}
-  spawnTime: 2
-  maxEnemyCount: 30
+  spawnTime: 1.5
+  maxEnemyCount: 50
   soundManager: {fileID: 558673741}
 --- !u!4 &199485437
 Transform:
@@ -2815,7 +2815,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -80, y: 620}
+  m_AnchoredPosition: {x: 0, y: 620}
   m_SizeDelta: {x: 800, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1406703956

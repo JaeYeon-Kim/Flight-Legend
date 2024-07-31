@@ -41,6 +41,15 @@ public class PlayerBomb : MonoBehaviour
         }
     }
 
+    // 일반몬스터 총알 및 보스의 총알을 막아줌
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("EnemyProjectile"))
+        {
+            Destroy(collision.gameObject);
+        }
+    }
+
     private IEnumerator CreateExplosionEffect()
     {
         while (true)

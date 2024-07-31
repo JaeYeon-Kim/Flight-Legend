@@ -114,8 +114,8 @@ public class PlayerData : MonoBehaviour
         level++;
 
         currentExperience = 0;
-        maxExperience *= 2;
-        maxHp += 10;
+        maxExperience *= 1.2f;
+        maxHp += 2;
         currentHP = maxHp;
 
         // 레벨업 시 이벤트 호출 

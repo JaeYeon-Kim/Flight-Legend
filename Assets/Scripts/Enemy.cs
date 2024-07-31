@@ -12,7 +12,7 @@ public class Enemy : MonoBehaviour
     // 적 개체 유형 지형 : 공격하는적 or 공격하지 않고 몸통박치기 하는적 
     public enum EnemyType
     {
-        Idle, Attack
+        Idle, Attack, SpinAttack
     };
 
     [SerializeField] private EnemyType enemyType;
@@ -112,12 +112,38 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    // 플레이어 쪽으로 총알을 발사하는 개체 
     private void Shoot()
     {
         shootDirection = (playerTrasform.position - transform.position).normalized;
         // 총알 발사 
         GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
         bullet.GetComponent<Movement2D>().MoveTo(shootDirection);
+    }
+
+    // 자신 주위로 원형으로 발사하는 개체 
+    private void ShootSpinAttack(int bulletCount)
+    {
+        float intervalAngle = 360 / bulletCount;  // 발사체 사이의 각도
+        float weightAngle = 0;  // 가중되는 각도 (항상 같은 위치로 발사하지 않도록 설정)
+
+        for (int i = 0; i < bulletCount; i++)
+        {
+            // 발사체 생성 
+            GameObject cloneProjectile = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+            // 발사체 이동 방향(각도)
+            float angle = weightAngle + intervalAngle * i;
+            // 발사체 이동 방향 (벡터)
+            float x = Mathf.Cos(angle * Mathf.PI / 180.0f);
+            float y = Mathf.Sin(angle * Mathf.PI / 180.0f);
+
+            // 발사체 이동방향 설정
+            cloneProjectile.GetComponent<Movement2D>().MoveTo(new Vector2(x, y));
+        }
+
+        // 발사체의 각도 변경을 위함
+        weightAngle++;
+
     }
 
     private void StartShooting()
@@ -129,6 +155,9 @@ public class Enemy : MonoBehaviour
 
             case EnemyType.Attack:
                 // 적 개체
+                StartCoroutine(ShootBullet());
+                break;
+            case EnemyType.SpinAttack:
                 StartCoroutine(ShootBullet());
                 break;
         }
@@ -150,7 +179,14 @@ public class Enemy : MonoBehaviour
                 // 플레이어가 일정 범위 안에 있으면 총알 발사 
                 if (distancePlayer <= detectionRange)
                 {
-                    Shoot();
+                    if (enemyType == EnemyType.Attack)
+                    {
+                        Shoot();
+                    }
+                    else if (enemyType == EnemyType.SpinAttack)
+                    {
+                        ShootSpinAttack(8);
+                    }
                 }
             }
         }

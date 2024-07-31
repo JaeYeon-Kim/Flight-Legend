@@ -195,15 +195,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0a031d090f1e4de78501d5af5722d8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyType: 1
+  enemyType: 2
   bulletPrefab: {fileID: 1582158913979132, guid: eb37e015fa916944c81e05758e6ce0b6, type: 3}
   explosionPrefab: {fileID: 760678370071004918, guid: 2f86dcddc2cce495d9cc2cccc91606d4, type: 3}
   itemPrefabs:
   - {fileID: 3234111536781107307, guid: 49b841bc6485f4000ba0db2c9b1e1053, type: 3}
   - {fileID: 5984542807577607002, guid: 537bdbc6a99a346bb90b119b33b5b3ba, type: 3}
   damage: 1
-  exp: 20
-  attackRate: 0.8
+  exp: 30
+  attackRate: 1.5
   detectionRange: 10
 --- !u!114 &5666169421101466739
 MonoBehaviour:

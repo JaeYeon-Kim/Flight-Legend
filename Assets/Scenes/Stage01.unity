@@ -794,7 +794,7 @@ MonoBehaviour:
   enemyHPSliderPrefab: {fileID: 691592155398333302, guid: 4c233b6dfdbd24c048de4de0ecbd627b, type: 3}
   canvasTransform: {fileID: 639682032}
   sliderBossHP: {fileID: 1406703954}
-  spawnTime: 1.5
+  spawnTime: 1.2
   maxEnemyCount: 50
   soundManager: {fileID: 558673741}
 --- !u!4 &199485437
@@ -1086,7 +1086,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 6496884189119067605, guid: 4199eb337f6e94dfa87eb1f8a8793928, type: 3}
-  defaultCapacity: 50
+  defaultCapacity: 30
   maxPoolSize: 300
 --- !u!4 &253275576
 Transform:
@@ -2185,7 +2185,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8574308290028282782, guid: 236055fb118b89949bf4698f3928dd5b, type: 3}
       propertyPath: maxHP
-      value: 100
+      value: 400
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

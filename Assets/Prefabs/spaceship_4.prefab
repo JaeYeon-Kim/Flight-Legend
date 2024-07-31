@@ -202,7 +202,7 @@ MonoBehaviour:
   - {fileID: 3234111536781107307, guid: 49b841bc6485f4000ba0db2c9b1e1053, type: 3}
   - {fileID: 5984542807577607002, guid: 537bdbc6a99a346bb90b119b33b5b3ba, type: 3}
   damage: 1
-  exp: 20
+  exp: 30
   attackRate: 1
   detectionRange: 10
 --- !u!114 &1395907549831275960
@@ -217,4 +217,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b3688424796042d1957e907731ead06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 7
+  maxHP: 12

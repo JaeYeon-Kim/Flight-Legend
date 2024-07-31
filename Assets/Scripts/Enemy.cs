@@ -9,11 +9,13 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
 
-    // 적 개체 유형 지형 
+    // 적 개체 유형 지형 : 공격하는적 or 공격하지 않고 몸통박치기 하는적 
     public enum EnemyType
     {
         Idle, Attack
     };
+
+    [SerializeField] private EnemyType enemyType;
 
     [SerializeField] private GameObject bulletPrefab; // 발사할 총알 프리팹
 
@@ -49,7 +51,7 @@ public class Enemy : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine(ShootBullet());
+        StartShooting();    // EnemyType에 따라 공격할지 말지 결정해줌 
     }
 
 
@@ -116,6 +118,20 @@ public class Enemy : MonoBehaviour
         // 총알 발사 
         GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
         bullet.GetComponent<Movement2D>().MoveTo(shootDirection);
+    }
+
+    private void StartShooting()
+    {
+        switch (enemyType)
+        {
+            case EnemyType.Idle:
+                break;
+
+            case EnemyType.Attack:
+                // 적 개체
+                StartCoroutine(ShootBullet());
+                break;
+        }
     }
 
 

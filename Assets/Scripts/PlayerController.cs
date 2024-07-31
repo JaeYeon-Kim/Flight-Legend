@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -14,16 +15,18 @@ public class PlayerController : MonoBehaviour
 
     private Weapon weapon;
 
-
     // 테스트를 위한 변수 
-    private Vector3 touchStartPos;
-    private Vector3 touchEndPos;
+
+    private Rigidbody2D rb;
     private Vector3 direction;
+    private Vector3 touchPosition;
+    private float moveSpeed = 30f;
 
 
 
     private void Awake()
     {
+        // rb = GetComponent<Rigidbody2D>();
         movement2D = GetComponent<Movement2D>();
         weapon = GetComponent<Weapon>();
     }
@@ -54,26 +57,19 @@ public class PlayerController : MonoBehaviour
         //     weapon.StopFiring();
         // }
 
-        // 모바일용 이동 로직 추가 
-        if (Application.platform == RuntimePlatform.Android)
-        {
-            if (Input.touchCount > 0)
-            {
-                Touch touch = Input.GetTouch(0);
+        // if (Input.touchCount > 0)
+        // {
+        //     Touch touch = Input.GetTouch(0);
+        //     touchPosition = Camera.main.ScreenToWorldPoint(touch.position);
+        //     touchPosition.z = 0;
+        //     direction = (touchPosition - transform.position);
+        //     rb.velocity = new Vector2(direction.x, direction.y) * moveSpeed;
 
-                if (touch.phase == TouchPhase.Began)
-                {
-                    touchStartPos = touch.position;
-                }
-
-                else if (touch.phase == TouchPhase.Moved)
-                {
-                    touchEndPos = touch.position;
-                    direction = (touchEndPos - touchStartPos).normalized;
-                    movement2D.MoveTo(direction);
-                }
-            }
-        }
+        //     if (touch.phase == TouchPhase.Ended)
+        //     {
+        //         rb.velocity = Vector2.zero;
+        //     }
+        // }
 
         // 플레이어 폭탄 발사 
         if (Input.GetKeyDown(keyCodeBomb))

@@ -8,7 +8,7 @@ public class Weapon : MonoBehaviour
 
 
     [SerializeField] private GameObject projectilePrefab;    // 공격할 때 생성되는 발사체 프리팹 
-    [SerializeField] private float attackRate = 0.5f;    // 공격 속도 
+    [SerializeField] private float attackRate = 0.4f;    // 공격 속도 
 
     [SerializeField] private int attackLevel = 1;    // 공격 레벨 
 
@@ -57,7 +57,7 @@ public class Weapon : MonoBehaviour
         switch (weaponNumber)
         {
             case 1:
-                attackRate -= 0.1f;
+                attackRate -= 0.05f;
                 break;
             case 2:
                 damage += 1;

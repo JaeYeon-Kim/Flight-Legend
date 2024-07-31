@@ -43,19 +43,14 @@ public class SceneLoad : MonoBehaviour
 
             if (progressbar.value >= 1f)
             {
-                loadText.text = "Please Touch any area";
+                loadText.text = "Please Press Enter Key";
             }
 
             // 모바일에서 화면을 터치하면 넘어감 
-            if (Input.touchCount > 0 && progressbar.value >= 1f && operation.progress >= 0.9f)
+            if (Input.GetKeyDown(KeyCode.Return) && progressbar.value >= 1f && operation.progress >= 0.9f)
             {
-                Touch touch = Input.GetTouch(0);
-
-                if (touch.phase == TouchPhase.Began)
-                {
-                    Debug.Log("다음 창으로 넘어가버려!!");
-                    operation.allowSceneActivation = true;
-                }
+                Debug.Log("다음 창으로 넘어가버려!!");
+                operation.allowSceneActivation = true;
             }
         }
     }

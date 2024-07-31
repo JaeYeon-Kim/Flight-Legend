@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 public enum BossState { MoveToAppearPoint = 0, Phase01, Phase02, Phase03, Idle }
@@ -14,6 +15,7 @@ public class Boss : MonoBehaviour
     [SerializeField] private GameObject sliderBossHP;       // 보스 체력바 
     [SerializeField] private GameObject bossExplosionPrefab;        // 보스 사망시 폭발효과 프리팹
     [SerializeField] private GameObject[] bossExplosionPointList;  // 보스가 사망할 경우 폭발 효과를 나타내는 Point 리스트 
+
     private BossState bossState = BossState.MoveToAppearPoint;
     private Movement2D movement2D;
     private BossWeapon bossWeapon;
@@ -81,7 +83,8 @@ public class Boss : MonoBehaviour
         spriteRenderer.color = endColor;
         yield return new WaitForSeconds(0.5f);
         sliderBossHP.SetActive(false);
-        Destroy(gameObject);
+        yield return new WaitForSeconds(0.5f);
+        SceneManager.LoadScene("GameClear");
     }
 
     IEnumerator MoveToAppearPoint()

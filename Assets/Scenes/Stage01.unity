@@ -794,7 +794,7 @@ MonoBehaviour:
   enemyHPSliderPrefab: {fileID: 691592155398333302, guid: 4c233b6dfdbd24c048de4de0ecbd627b, type: 3}
   canvasTransform: {fileID: 639682032}
   sliderBossHP: {fileID: 1406703954}
-  spawnTime: 1.2
+  spawnTime: 1.5
   maxEnemyCount: 50
   soundManager: {fileID: 558673741}
 --- !u!4 &199485437
@@ -2185,7 +2185,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8574308290028282782, guid: 236055fb118b89949bf4698f3928dd5b, type: 3}
       propertyPath: maxHP
-      value: 400
+      value: 300
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3615,9 +3615,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 6496884189119067605, guid: 4199eb337f6e94dfa87eb1f8a8793928, type: 3}
-  attackRate: 0.5
+  attackRate: 0.4
   attackLevel: 1
-  damage: 1
+  damage: 2
   bombPrefab: {fileID: 4321224307825986550, guid: 69beb2abe3228483d830bfbf05a0e824, type: 3}
   maxAttackRate: 0.1
   maxAttackLevel: 3
@@ -3721,7 +3721,7 @@ MonoBehaviour:
   playerHPSliderPrefab: {fileID: 8037974898416972119, guid: b1b7631b1cd7c4d99bea066f2a6e8df5, type: 3}
   player: {fileID: 8248057344090619728}
   canvasTransform: {fileID: 639682032}
-  maxHp: 12
+  maxHp: 20
 --- !u!1 &8248057344090619728
 GameObject:
   m_ObjectHideFlags: 0
@@ -3759,7 +3759,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0

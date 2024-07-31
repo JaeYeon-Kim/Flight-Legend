@@ -25,7 +25,7 @@ public class BossWeapon : MonoBehaviour
     // 원 형태로 발사하는 코루틴 : 패턴 1
     private IEnumerator CircleFire()
     {
-        float attackRate = 0.5f;    // 공격 주기 
+        float attackRate = 0.8f;    // 공격 주기 
         int count = 30;     // 발사체 생성 개수 
         float intervalAngle = 360 / count;  // 발사체 사이의 각도
         float weightAngle = 0;  // 가중되는 각도 (항상 같은 위치로 발사하지 않도록 설정)

@@ -16,20 +16,24 @@ public class PlayerController : MonoBehaviour
 
     private Weapon weapon;
 
-    // 점수 
-    private int score;
-    public int Score
-    {
-        // score 값이 음수가 되면 안됨
-        set => score = Mathf.Max(0, value);
-        get => score;
-    }
+
+    // 테스트를 위한 변수 
+    private Vector3 touchStartPos;
+    private Vector3 touchEndPos;
+    private Vector3 direction;
+
 
 
     private void Awake()
     {
         movement2D = GetComponent<Movement2D>();
         weapon = GetComponent<Weapon>();
+    }
+
+    private void Start()
+    {
+        // 플레이어 생성시 총알을 발사하는 코루틴 시작 
+        weapon.StartFiring();
     }
 
     // Update is called once per frame
@@ -39,23 +43,43 @@ public class PlayerController : MonoBehaviour
         float x = Input.GetAxisRaw("Horizontal");
         float y = Input.GetAxisRaw("Vertical");
 
-
         // MoveTo() 메소드에 값 입력
         movement2D.MoveTo(new Vector3(x, y, 0));
 
-        // 공격키를 Down/up으로 공격 시작 / 종료 
-        if (Input.GetKeyDown(keyCodeAttack))
-        {
-            weapon.StartFiring();
-        }
-        else if (Input.GetKeyUp(keyCodeAttack))
-        {
-            weapon.StopFiring();
-        }
+        // // 공격키를 Down/up으로 공격 시작 / 종료 
+        // if (Input.GetKeyDown(keyCodeAttack))
+        // {
+        //     weapon.StartFiring();
+        // }
+        // else if (Input.GetKeyUp(keyCodeAttack))
+        // {
+        //     weapon.StopFiring();
+        // }
 
+        // 모바일용 이동 로직 추가 
+        if (Application.platform == RuntimePlatform.Android)
+        {
+            if (Input.touchCount > 0)
+            {
+                Touch touch = Input.GetTouch(0);
+
+                if (touch.phase == TouchPhase.Began)
+                {
+                    touchStartPos = touch.position;
+                }
+
+                else if (touch.phase == TouchPhase.Moved)
+                {
+                    touchEndPos = touch.position;
+                    direction = (touchEndPos - touchStartPos).normalized;
+                    movement2D.MoveTo(direction);
+                }
+            }
+        }
 
         // 플레이어 폭탄 발사 
-        if (Input.GetKeyDown(keyCodeBomb)) {
+        if (Input.GetKeyDown(keyCodeBomb))
+        {
             weapon.CreateBoomAttack();
         }
     }
@@ -69,8 +93,6 @@ public class PlayerController : MonoBehaviour
 
     public void OnDie()
     {
-        // 디바이스에 획득한 점수 score 저장
-        PlayerPrefs.SetInt("Score", score);
         // 플레이어 사망 시 nextSceneName 씬으로 이동 
         SceneManager.LoadScene(nextSceneName);
     }

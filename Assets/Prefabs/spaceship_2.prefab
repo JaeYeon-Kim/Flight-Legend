@@ -176,7 +176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fd0b7948f777483b8ab2815938eb23e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 7
+  moveSpeed: 8
   moveDirection: {x: 0, y: -1, z: 0}
 --- !u!114 &7161267121113913728
 MonoBehaviour:
@@ -208,7 +208,7 @@ MonoBehaviour:
   itemPrefabs:
   - {fileID: 3234111536781107307, guid: 49b841bc6485f4000ba0db2c9b1e1053, type: 3}
   - {fileID: 5984542807577607002, guid: 537bdbc6a99a346bb90b119b33b5b3ba, type: 3}
-  damage: 1
+  damage: 5
   exp: 20
   attackRate: 1
   detectionRange: 10

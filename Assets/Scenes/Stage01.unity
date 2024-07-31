@@ -3620,7 +3620,7 @@ MonoBehaviour:
   playerHPSliderPrefab: {fileID: 8037974898416972119, guid: b1b7631b1cd7c4d99bea066f2a6e8df5, type: 3}
   player: {fileID: 8248057344090619728}
   canvasTransform: {fileID: 639682032}
-  maxHp: 10
+  maxHp: 12
 --- !u!1 &8248057344090619728
 GameObject:
   m_ObjectHideFlags: 0

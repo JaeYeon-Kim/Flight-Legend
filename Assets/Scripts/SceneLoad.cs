@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
-using UnityEditor.Rendering;
 
 
 /*
@@ -44,14 +43,19 @@ public class SceneLoad : MonoBehaviour
 
             if (progressbar.value >= 1f)
             {
-                loadText.text = "Press Enter";
+                loadText.text = "Please Touch any area";
             }
 
-            // 만약 스페이스바 키를 누르면 창이 넘어감
-            if (Input.GetKeyDown(KeyCode.Return) && progressbar.value >= 1f && operation.progress >= 0.9f)
+            // 모바일에서 화면을 터치하면 넘어감 
+            if (Input.touchCount > 0 && progressbar.value >= 1f && operation.progress >= 0.9f)
             {
-                Debug.Log("다음창으로 넘어가버려!!");
-                operation.allowSceneActivation = true;
+                Touch touch = Input.GetTouch(0);
+
+                if (touch.phase == TouchPhase.Began)
+                {
+                    Debug.Log("다음 창으로 넘어가버려!!");
+                    operation.allowSceneActivation = true;
+                }
             }
         }
     }

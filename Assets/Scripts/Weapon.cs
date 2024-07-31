@@ -1,10 +1,6 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
-using TMPro;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
-using UnityEngine.Video;
 
 // 무기 스크립트 
 public class Weapon : MonoBehaviour

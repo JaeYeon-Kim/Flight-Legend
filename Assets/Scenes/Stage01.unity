@@ -3857,7 +3857,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextSceneName: GameOver
   stageData: {fileID: 11400000, guid: d1056eb88fdf84f0c8317c3e78386507, type: 2}
-  keyCodeAttack: 32
   keyCodeBomb: 98
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

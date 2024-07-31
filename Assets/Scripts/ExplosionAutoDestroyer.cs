@@ -18,7 +18,6 @@ public class ExplosionAutoDestroyer : MonoBehaviour
         // 폭발 애니메이션 재생이 끝나면 삭제 
         if (animator.GetCurrentAnimatorStateInfo(0).IsName("Explosion") == true)
         {
-            Debug.Log("원하는 애니메이션이야!!");
             // 원하는 애니메이션이 맞다면?
             float animTime = animator.GetCurrentAnimatorStateInfo(0).normalizedTime;
 

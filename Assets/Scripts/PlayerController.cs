@@ -9,8 +9,6 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private StageData stageData;
 
-    [SerializeField] private KeyCode keyCodeAttack = KeyCode.Space;      // 공격키 설정 
-
     [SerializeField] private KeyCode keyCodeBomb = KeyCode.B;            // 플레이어 필살기 
     private Movement2D movement2D;
 

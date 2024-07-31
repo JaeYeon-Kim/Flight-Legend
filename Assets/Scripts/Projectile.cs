@@ -31,8 +31,6 @@ public class Projectile : MonoBehaviour
 
         if (!gameObject.activeSelf) return; // 이미 비활성화된 경우 처리 중단
 
-        Debug.Log("변화한 공격력" + this.damage);
-
         // 일반 몬스터 충돌처리 
         if (collision.CompareTag("Enemy"))
         {

@@ -45,7 +45,6 @@ public class PlayerData : MonoBehaviour
     public int StarCount => starCount;
 
 
-
     private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();

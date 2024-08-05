@@ -795,7 +795,7 @@ MonoBehaviour:
   canvasTransform: {fileID: 639682032}
   sliderBossHP: {fileID: 1406703954}
   spawnTime: 1.5
-  maxEnemyCount: 50
+  maxEnemyCount: 40
   soundManager: {fileID: 558673741}
 --- !u!4 &199485437
 Transform:
